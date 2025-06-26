@@ -12,7 +12,7 @@ body, html {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,21 +22,21 @@ section {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   margin: 0;
   color: #ff5e7e;
   text-shadow: 2px 2px 5px rgba(255, 94, 126, 0.3);
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   color: #555;
   margin-top: 10px;
   opacity: 0.7;
 }
 
 #cat {
-  width: 200px;
+  width: clamp(200px, 50vw, 400px);
   opacity: 0;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
@@ -44,7 +44,7 @@ h6 {
 }
 
 #caption {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   margin-top: 1em;
   opacity: 0;
   color: #444;
@@ -52,7 +52,7 @@ h6 {
 
 #final-btn {
   padding: 0.8em 1.5em;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   cursor: pointer;
   background-color: #ff5e7e;
   color: white;
@@ -108,4 +108,11 @@ h6 {
 
 #close:hover {
   background-color: #ddd;
+}
+
+/* 🌟 Медиазапросы для очень маленьких экранов */
+@media (max-width: 400px) {
+  #modal-content {
+    padding: 1.5em;
+  }
 }
